@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import logo from './logo.svg'
+import Boton from './components/Boton'
+import Frase from './components/Frase'
 
 function App() {
+
+  const [frase, setFrase] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex flex-col justify-center w-full h-screen items-center">
+      <img src={logo} alt="" className="px-5"/>
+      <Frase
+        frase = {frase}
+      />
+      <Boton
+        setFrase = {setFrase}
+      />
     </div>
   );
 }
